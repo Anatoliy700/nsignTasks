@@ -51,6 +51,9 @@ $config = [
             ],
         ],
         */
+        'formatter' => [
+            'class' => \app\components\Formatter::class
+        ]
     ],
     'params' => $params,
 ];
