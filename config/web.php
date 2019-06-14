@@ -9,7 +9,7 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
@@ -43,16 +43,18 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
         'formatter' => [
             'class' => \app\components\Formatter::class
+        ],
+        'xmlParser' => [
+            'class' => \app\components\XmlParser::class,
+            'path' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'dataStore'
         ]
     ],
     'params' => $params,
