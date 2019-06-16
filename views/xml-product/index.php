@@ -24,7 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'id',
         'category',
         'price:currency',
-        'hidden:boolean'
+        'hidden:boolean',
+        'emptyData' // для задания по виджетам
     ],
     'filterModel' => $searchModel
 ]) ?>

@@ -5,6 +5,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'language' => 'ru-Ru',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -55,6 +56,22 @@ $config = [
         'xmlParser' => [
             'class' => \app\components\XmlParser::class,
             'path' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'dataStore'
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => \yii\i18n\PhpMessageSource::class,
+                    'basePath' => '@app/messages',
+                ]
+            ]
+        ],
+    ],
+    'container' => [
+        'definitions' => [
+            \yii\grid\DataColumn::class => [
+                'class' => \app\widgets\DataColumn::class,
+                'emptyCellMessage' => ['app' => '(no data)']
+            ]
         ]
     ],
     'params' => $params,
